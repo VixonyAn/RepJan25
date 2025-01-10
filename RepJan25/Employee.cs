@@ -20,7 +20,12 @@ namespace RepJan25
         public int BaseSalary
 		{
 			get { return _baseSalary; }
-			set { _baseSalary = value; }
+			set {
+                if (value < 0 || value > 10000)
+                {
+                    throw new ArgumentException("BaseSalary outside allowed range");
+                }
+                _baseSalary = value; }
 		}
 		public int ID
 		{
@@ -38,6 +43,10 @@ namespace RepJan25
         #region Constructor
         public Employee(int baseSalary, int id, string name, string mobile)
         {
+            if (baseSalary < 0 || baseSalary > 10000)
+            {
+                throw new ArgumentException("BaseSalary outside allowed range");
+            }
             _baseSalary = baseSalary;
             _id = id;
             _name = name;

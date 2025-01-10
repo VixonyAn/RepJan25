@@ -66,6 +66,24 @@ Console.WriteLine(empDict.CalculateTotalSalarySum());
 
 //Console.WriteLine(ep.CalculateSalary());
 
+try
+{
+    //Employee et = new Employee(20000, 5, "Anton", "98899889");
+    ep.BaseSalary = 30000;
+    Console.WriteLine("This will not happen if an exception is caught");
+}
+catch (ArgumentException aex)
+{
+    Console.WriteLine($"{aex.Message} for the employee you are trying to register");
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Der skete en general fejl");
+}
+finally
+{
+    Console.WriteLine("Process complete");
+}
 /* // når klassen er abstrakt
 //Teacher t1 = new Teacher("Teknologi", 200, 2, "Mikkel", "34343434");
 //Secretary s1 = new Secretary(true, 200, 3, "Amalie", "56565656");
