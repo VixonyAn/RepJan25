@@ -78,12 +78,20 @@ namespace RepJan25
         public double CalculateTotalSalarySum()
         {
             double SalarySum = 0;
-            while ()
-
-            for (int i = 0; i < _employees.Count; i++)
+            int i = 0;
+            List<Employee> empList = _employees.Values.ToList();
+            while (i < empList.Count)
             {
-                SalarySum = _employees[i].CalculateSalary();
+                SalarySum = SalarySum + empList[i].CalculateSalary();
+                i++;
             }
+            /*
+            for (int i = 1; i < _employees.Count; i++)
+            {
+                SalarySum = SalarySum + _employees[i].CalculateSalary();
+                //SalarySum += _employees[i].CalculateSalary();
+            }
+            */
             /*
             foreach (Employee emp in _employees.Values)
             {

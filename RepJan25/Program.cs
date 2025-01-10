@@ -62,7 +62,7 @@ foreach (Employee emp in empDict.GetAllEmployee())
     Console.WriteLine(emp);
 }
 
-//Console.WriteLine(empDict.CalculateTotalSalarySum());
+Console.WriteLine(empDict.CalculateTotalSalarySum());
 
 //Console.WriteLine(ep.CalculateSalary());
 
